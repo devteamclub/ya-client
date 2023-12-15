@@ -1,0 +1,19 @@
+description: >
+
+
+  **Ваш SKU**
+
+
+  Идентификатор товара в магазине. Разрешены английские и русские буквы, цифры и
+  символы `. , / \ ( ) [ ] - = _`
+
+
+  Максимальная длина — 80 знаков.
+
+
+  [Что такое SKU и как его
+  назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields).
+type: string
+pattern: ^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\/()\[\]\-=_]{1,80}$
+minLength: 1
+maxLength: 80

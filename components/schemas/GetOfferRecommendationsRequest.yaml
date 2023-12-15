@@ -1,0 +1,28 @@
+type: object
+properties:
+  offerIds:
+    description: >-
+      Идентификаторы товаров, информация о которых нужна. ⚠️ Не используйте это
+      поле одновременно с остальными фильтрами. Если вы хотите воспользоваться
+      фильтрами, оставьте поле пустым.
+    type: array
+    items:
+      $ref: ./ShopSku.yaml
+  cofinancePriceFilter:
+    description: >-
+      Фильтр, выводящий товары, для которых заданы (`SPECIFIED`) цены для
+      участия в софинансировании или товары, для которых не заданы (`EMPTY`)
+      цены для участия в софинансировании.
+    $ref: ./FieldStateType.yaml
+  recommendedCofinancePriceFilter:
+    description: >-
+      Фильтр, выводящий товары, для которых рассчитаны (`SPECIFIED`)
+      рекомендованные цены для участия в софинасировании или товары, для которых
+      не рассчитаны (`EMPTY`) рекомендованные цены для участия в
+      софинасировании.
+    $ref: ./FieldStateType.yaml
+  competitivenessFilter:
+    description: >-
+      Фильтр, выводящий товары, с привлекательными, умеренными и
+      непривлекательными ценами.
+    $ref: ./PriceCompetitivenessType.yaml

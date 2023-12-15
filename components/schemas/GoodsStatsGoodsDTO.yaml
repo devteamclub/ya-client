@@ -1,0 +1,47 @@
+description: Информация о товаре.
+type: object
+properties:
+  shopSku:
+    description: Ваш SKU.
+    $ref: ./ShopSku.yaml
+  marketSku:
+    description: SKU на Маркете — идентификатор карточки товара на Маркете.
+    $ref: ./MarketSku.yaml
+  name:
+    description: Название товара.
+    type: string
+  price:
+    description: Цена на товар, выставленная партнером.
+    type: number
+  categoryId:
+    description: Идентификатор категории товара на Маркете.
+    type: integer
+    format: int64
+  categoryName:
+    description: Название категории товара на Маркете.
+    type: string
+  weightDimensions:
+    description: >
+      Информация о весе и габаритах товара.
+
+      Если товар уже привязан к карточке (`marketSku`), в ответе вернутся
+      габариты из карточки Маркета, а не размеры, которые вы передаете.
+    $ref: ./GoodsStatsWeightDimensionsDTO.yaml
+  warehouses:
+    description: |
+      Информация о складах, на которых хранится товар.
+
+      Параметр не приходит, если товара нет ни на одном складе.
+    type: array
+    items:
+      $ref: ./GoodsStatsWarehouseDTO.yaml
+  tariffs:
+    description: Информация о тарифах, по которым нужно заплатить за услуги Маркета.
+    type: array
+    items:
+      $ref: ./GoodsStatsTariffDTO.yaml
+  pictures:
+    description: Ссылки (URL) изображений товара в хорошем качестве.
+    type: array
+    items:
+      type: string

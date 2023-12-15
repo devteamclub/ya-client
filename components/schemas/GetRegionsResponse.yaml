@@ -1,0 +1,10 @@
+type: object
+properties:
+  regions:
+    type: array
+    description: Информация о регионах.
+    items:
+      $ref: ./RegionDTO.yaml
+  paging:
+    description: Ссылка на следующую страницу.
+    $ref: ./ForwardScrollingPagerDTO.yaml
